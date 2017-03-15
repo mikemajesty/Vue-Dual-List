@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mikemajesty/cachorro-dual-list/issues"
   },
-  "homepage": "https://github.com/mikemajesty/cachorro-dual-list#readme"
+  "homepage": "https://github.com/mikemajesty/cachorro-dual-list#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
 }
