@@ -5,13 +5,18 @@
 </head>
 
 <body>
-  <div id="app-2">
-    <span v-bind:title="message">
-    Hover your mouse over me for a few seconds
-    to see my dynamically bound title!
-  </span>
+  <div id="app-3">
+    <p v-if="seen">Now you see me</p>
+  </div>
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
   </div>
 </body>
 <script src="https://unpkg.com/vue"></script>
 <script src="/demo/cachorro.js"></script>
+
 </html>
