@@ -1,8 +1,8 @@
-window.onload = function () {
-  var app = new Vue({
-    el: '#app',
+window.onload = function() {
+  var app2 = new Vue({
+    el: '#app-2',
     data: {
-      message: 'HELLO!!! CELSÃO CACHORRO'
+      message: 'You loaded this page on ' + new Date()
     }
   });
 };
