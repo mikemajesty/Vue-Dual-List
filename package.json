@@ -1,6 +1,6 @@
 {
   "name": "cachorro-dual-list",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/mikemajesty/cachorro-dual-list#readme",
   "dependencies": {
-    "express": "^4.15.2",
-    "vue": "^2.2.4",
-    "serve-favicon": "^2.3.2"
+    "express": "4.15.2",
+    "materialize-css": "0.98.0",
+    "serve-favicon": "2.3.2",
+    "vue": "2.2.4"
   }
 }
