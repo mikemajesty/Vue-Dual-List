@@ -1,17 +1,28 @@
 Vue.component('celso-dog', {
-  template: '<div v-on:click="changeMessage">{{ message }}</div>',
+  template:  "<div> <select  v-on:click='change' class='form-control'> <option v-for='category in categories' v-bind:category='category'> <b >{{ category.text }}</b> </option> </select>    </div>" ,
+  props: ['category'],
   data: function () {
     return {
-      message: "CELSÃO CACHORRO!!"
+      categories: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }]
     };
   },
   methods: {
-    changeMessage: function () {
-      this.message = "CELSÃO CHINES CACHORRO!!";
+    change: function () {
+      console.log('choose');
     }
   }
 });
 
-new Vue({
-  el: '#example'
+var app4 = new Vue({
+  el: '#cachorro',
+  data: {
+    categories: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
 });
