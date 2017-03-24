@@ -1,34 +1,17 @@
 Vue.component('celso-dog', {
   template:  `<div> 
-                <select  v-on:click='change' class='form-control'>
-                   <option v-for='category in categories' v-bind:ng='category'> 
-                      <b >{{ category.text }}</b> 
+                <select class='form-control'>
+                   <option v-for='category in categories' v-bind:dto='category'> 
+                      <b >{{ category.name }}</b> 
                    </option> 
                 </select>    
               </div>` ,
-  props: ['ng'],
-  data: function () {
-    return {
-      categories: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' }]
-    };
-  },
-  methods: {
-    change: function () {
-      console.log('choose');
-    }
-  }
+  props: ['dto', 'categories'],
 });
 
-var app4 = new Vue({
+var vm = new Vue({
   el: '#cachorro',
   data: {
-    categories: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' }
-    ]
+    categories: []
   }
 });
