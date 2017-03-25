@@ -25,7 +25,13 @@ Vue.component('celso-dog', {
                     </div>
                     <div class="list">
                       <ul>
-                      
+                        <li v-for="item in options.items">
+                          <a href=""> 
+                            <span> 
+                              {{item.category}} -
+                            </span>
+                           {{item.name}}&nbsp;&rArr;</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -50,11 +56,16 @@ Vue.component('celso-dog', {
       default: {},
       required: true
     },
-     'search': {
+    'search': {
       type: String,
       required: false
     }
   },
+  methods: {
+    find: function (items) {
+      console.log('items', items);
+    }
+  }  
 });
 
 var vm = new Vue({
@@ -63,6 +74,20 @@ var vm = new Vue({
     return {
       options: {
         label: "Demo title",
+        items: [
+          { 'category': 'FF8', 'name': 'Squall Leonhart' },
+          { 'category': 'FF8', 'name': 'Quistis Trepe' },
+          { 'category': 'FF8', 'name': 'Zell Dincht' },
+
+          { 'category': 'FF9', 'name': 'Zidane' },
+          { 'category': 'FF9', 'name': 'Garnet' },
+          { 'category': 'FF9', 'name': 'Vivi' },
+
+          { 'category': 'FF7', 'name': 'Cloud Strife' },
+          { 'category': 'FF7', 'name': 'Aerith Gainsborough' },
+          { 'category': 'FF7', 'name': 'Vincent Valentine' },
+
+        ],
         categories: [{ name: 'FF7' }, { name: 'FF8' }, { name: 'FF9' }]
       }
     };
