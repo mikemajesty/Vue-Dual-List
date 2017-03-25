@@ -10,8 +10,5 @@ Vue.component('celso-dog', {
 });
 
 var vm = new Vue({
-  el: '#cachorro',
-  data: {
-    categories: []
-  }
+  el: '#cachorro'
 });
