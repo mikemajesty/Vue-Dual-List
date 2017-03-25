@@ -1,11 +1,47 @@
-<div class='excaliburduallist'>
-  <div class='row'>
-    <div class='col-lg-12 col-md-12 col-sm-12'>
-      <select class='form-control'>
-				<option v-for='category in categories' v-bind:dto='category'>
-					<b>{{ category.name }}</b>
-				</option>
-			</select>
+<div class="dualmultiselect">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <h4 ng-if="options.title">{{options.title.label}}
+        <small>&nbsp;{{options.title.helpMessage}}</small>
+      </h4>
+      <select class="form-control" ng-model="search"> 
+        <option ng-selected="true" value="" ng-disabled="options.selectOptions.isDisable" ng-if="options.selectOptions.initialText">{{options.selectOptions.initialText}}</option> 
+        <option value="{{ category }}" ng-if="options.selectOptions.uppercase" ng-repeat="category in options.categories">
+           <b >{{category | uppercase}}</b> 
+        </option>
+        <option value="{{ category }}" ng-if="!options.selectOptions.uppercase" ng-repeat="category in options.categories">
+           <b >{{category}}</b> 
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 pull-right"> <button type="button" class="btn btn-default btn-xs" ng-click="transfer(options.items, options.selectedItems, -1)"> {{options.button.leftText}} -&#187; </button> </div>
+      </div>
+      <div class="list">
+        <ul ng-if="search">
+          <li ng-repeat="item in options.items | filter: search | orderBy: options.itemsOrderProperty">
+            <a href="" ng-click="transfer(options.items, options.selectedItems, options.items.indexOf(item))"> <span ng-show="!search">{{item.category}} -</span> {{item.name}}&nbsp;&rArr;</a>
+          </li>
+        </ul>
+        <ul ng-if="!search">
+          <li ng-repeat="item in options.items | orderBy: options.itemsOrderProperty">
+            <a href="" ng-click="transfer(options.items, options.selectedItems, options.items.indexOf(item))"> <span ng-show="!search">{{item.category}} -</span> {{item.name}}&nbsp;&rArr;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-7"> <button type="button" class="btn btn-default btn-xs pull-right" ng-click="transfer(options.selectedItems, options.items, -1)"> &#171;- {{options.button.rightText}} </button> </div>
+      </div>
+      <div class="list">
+        <ul>
+          <li ng-repeat="item in options.selectedItems | orderBy: options.itemsOrderProperty"> <a href="" ng-click="transfer(options.selectedItems, options.items, options.selectedItems.indexOf(item))"> &lArr;&nbsp;{{item.category}} - {{item.name}} </a> </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
