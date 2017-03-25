@@ -1,5 +1,5 @@
 Vue.component('celso-dog', {
-  template:  `<div class='excaliburduallist'> 
+  template: `<div class='excaliburduallist'> 
                 <div class='row'>
                   <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                     <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -7,7 +7,7 @@ Vue.component('celso-dog', {
                         {{options.label}}
                       </h4>
                       <select class='form-control' v-model='search'>
-                        <option v-for='category in options.categories' v-bind:dto='category'> 
+                        <option v-for='category in options.categories' v-bind:render='category'> 
                             <b >{{ category.name }}</b> 
                         </option> 
                       </select> 
@@ -43,16 +43,28 @@ Vue.component('celso-dog', {
                     </div>
                   </div>
                 </div>
-              </div>` ,
-  props: ['dto', 'options'],
+              </div>`,
+  props: {
+    'options': {
+      type: Object,
+      default: {},
+      required: true
+    },
+     'search': {
+      type: String,
+      required: false
+    }
+  },
 });
 
 var vm = new Vue({
   el: '#cachorro',
-  data: {
-    options: {
-      label: "Demo title",
-      categories: [{name: 'FF7'}, {name: 'FF8'}, {name: 'FF9'}]
-    } 
+  data: function() {
+    return {
+      options: {
+        label: "Demo title",
+        categories: [{ name: 'FF7' }, { name: 'FF8' }, { name: 'FF9' }]
+      }
+    };
   }
 });
