@@ -26,7 +26,7 @@ Vue.component('celso-dog', {
                     <div class="list">
                       <ul>
                         <li v-for="item in options.items">
-                          <a href=""> 
+                          <a href="#" v-on:click='transfer(options.items, options.selectedItems, options.items.indexOf(item))'> 
                             <span> 
                               {{item.category}} -
                             </span>
@@ -62,10 +62,22 @@ Vue.component('celso-dog', {
     }
   },
   methods: {
-    find: function (items) {
+    find: function(items) {
       console.log('items', items);
+    },
+    transfer: function(current, to, index) {
+      if (index >= 0) {
+        to.push(current[index]);
+        current.splice(index, 1);
+      } else {
+        for (var i = 0; i < current.length; i++) {
+          to.push(current[i]);
+        }
+        current.length = 0;
+      }
+
     }
-  }  
+  }
 });
 
 var vm = new Vue({
@@ -88,7 +100,8 @@ var vm = new Vue({
           { 'category': 'FF7', 'name': 'Vincent Valentine' },
 
         ],
-        categories: [{ name: 'FF7' }, { name: 'FF8' }, { name: 'FF9' }]
+        categories: [{ name: 'FF7' }, { name: 'FF8' }, { name: 'FF9' }],
+        selectedItems: []
       }
     };
   }
