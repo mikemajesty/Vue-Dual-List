@@ -6,7 +6,7 @@ Vue.component('celso-dog', {
                       <h4>
                         {{options.label}}
                       </h4>
-                      <select class='form-control' v-model='search'>
+                      <select class='form-control' v-model='search' v-bind:value="search">
                         <option v-for='category in options.categories' v-bind:render='category'> 
                             <b >{{ category.name }}</b> 
                         </option> 
@@ -60,29 +60,33 @@ Vue.component('celso-dog', {
       type: Object,
       default: {},
       required: true
-    },
-    'search': {
-      type: String,
-      required: false
     }
   },
+  data: function() {
+    return {
+      search: ''
+    };
+  },
   methods: {
-    find: function(items) {
-      console.log('items', items);
-    },
     transfer: function(current, to, index) {
       if (index >= 0) {
         to.push(current[index]);
         current.splice(index, 1);
       } else {
-        for (var i = 0; i < current.length; i++) {
-          to.push(current[i]);
+        for (var cont = 0; cont < current.length; cont++) {
+          to.push(current[cont]);
         }
         current.length = 0;
       }
-
     }
-  }
+  },
+  watch: {
+    'search': function(value) {
+      return this.options.items.filter(function(item) {
+        return item.category === value;
+      });
+    }
+  },
 });
 
 var vm = new Vue({
@@ -92,20 +96,24 @@ var vm = new Vue({
       options: {
         label: 'Demo title',
         items: [
-          { 'category': 'FF8', 'name': 'Squall Leonhart' },
-          { 'category': 'FF8', 'name': 'Quistis Trepe' },
-          { 'category': 'FF8', 'name': 'Zell Dincht' },
+          { 'category': 'ALUNDRA', 'name': 'Alundra' },
+          { 'category': 'ALUNDRA', 'name': 'Jess' },
+          { 'category': 'ALUNDRA', 'name': 'Meia' },
+          { 'category': 'ALUNDRA', 'name': 'Melzas' },
+          { 'category': 'ALUNDRA', 'name': 'Septimus' },
 
-          { 'category': 'FF9', 'name': 'Zidane' },
-          { 'category': 'FF9', 'name': 'Garnet' },
-          { 'category': 'FF9', 'name': 'Vivi' },
+          { 'category': 'WILD ARMS', 'name': 'Rudy Roughknight' },
+          { 'category': 'WILD ARMS', 'name': 'Jack Van Burace' },
+          { 'category': 'WILD ARMS', 'name': 'Hanpan' },
+          { 'category': 'WILD ARMS', 'name': 'Cecilia Adlehyde' },
 
-          { 'category': 'FF7', 'name': 'Cloud Strife' },
-          { 'category': 'FF7', 'name': 'Aerith Gainsborough' },
-          { 'category': 'FF7', 'name': 'Vincent Valentine' },
+          { 'category': 'CHRONO CROSS', 'name': 'Serge' },
+          { 'category': 'CHRONO CROSS', 'name': 'Kid' },
+          { 'category': 'CHRONO CROSS', 'name': 'Lynx' },
+          { 'category': 'CHRONO CROSS', 'name': 'Harle' },
 
         ],
-        categories: [{ name: 'FF7' }, { name: 'FF8' }, { name: 'FF9' }],
+        categories: [{ name: 'ALUNDRA' }, { name: 'WILD ARMS' }, { name: 'CHRONO CROSS' }],
         selectedItems: []
       }
     };
