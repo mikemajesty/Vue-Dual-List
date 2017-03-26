@@ -14,19 +14,19 @@ Vue.component('celso-dog', {
                    </div> 
                   </div>
                 </div>
-                 <div class="row">
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="row">
-                      <div class="col-lg-8 col-md-8 col-sm-8 pull-right"> 
-                        <button type="button" class="btn btn-default btn-xs"> 
+                 <div class='row'>
+                  <div class='col-lg-6 col-md-6 col-sm-6'>
+                    <div class='row'>
+                      <div class='col-lg-8 col-md-8 col-sm-8 pull-right'> 
+                        <button type='button' class='btn btn-default btn-xs' v-on:click='transfer(options.items, options.selectedItems, -1)'> 
                           Move All -&#187; 
                         </button> 
                       </div>
                     </div>
-                    <div class="list">
+                    <div class='list'>
                       <ul>
-                        <li v-for="item in options.items">
-                          <a href="#" v-on:click='transfer(options.items, options.selectedItems, options.items.indexOf(item))'> 
+                        <li v-for='item in options.items'>
+                          <a href='#' v-on:click='transfer(options.items, options.selectedItems, options.items.indexOf(item))'> 
                             <span> 
                               {{item.category}} -
                             </span>
@@ -35,16 +35,21 @@ Vue.component('celso-dog', {
                       </ul>
                     </div>
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="row">
-                        <div class="col-lg-7 col-md-7 col-sm-7"> 
-                          <button type="button" class="btn btn-default btn-xs pull-right"> 
+                  <div class='col-lg-6 col-md-6 col-sm-6'>
+                    <div class='row'>
+                        <div class='col-lg-7 col-md-7 col-sm-7'> 
+                          <button type='button' class='btn btn-default btn-xs pull-right' v-on:click='transfer(options.selectedItems, options.items, -1)'> 
                             &#171;- Move All 
                           </button> 
                         </div>
                     </div>
-                    <div class="list">
+                    <div class='list'>
                       <ul>
+                        <li v-for='item in options.selectedItems'> 
+                          <a href='#' v-on:click='transfer(options.selectedItems, options.items, options.selectedItems.indexOf(item))'>
+                             &lArr;&nbsp;{{item.category}} - {{item.name}}
+                          </a> 
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -85,7 +90,7 @@ var vm = new Vue({
   data: function() {
     return {
       options: {
-        label: "Demo title",
+        label: 'Demo title',
         items: [
           { 'category': 'FF8', 'name': 'Squall Leonhart' },
           { 'category': 'FF8', 'name': 'Quistis Trepe' },
