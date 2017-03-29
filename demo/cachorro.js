@@ -6,7 +6,7 @@ Vue.component('celso-dog', {
                       <h4>
                         {{options.label}}
                       </h4>
-                      <select class='form-control' v-model='search' v-bind:value="search">
+                      <select class='form-control' v-model='search' v-bind:value='search'>
                         <option v-for='category in options.categories' v-bind:render='category'> 
                             <b >{{ category.name }}</b> 
                         </option> 
@@ -25,7 +25,7 @@ Vue.component('celso-dog', {
                     </div>
                     <div class='list'>
                       <ul>
-                        <li v-for='item in options.items'>
+                        <li v-for='item in filtering'>
                           <a href='#' v-on:click='transfer(options.items, options.selectedItems, options.items.indexOf(item))'> 
                             <span> 
                               {{item.category}} -
@@ -80,13 +80,16 @@ Vue.component('celso-dog', {
       }
     }
   },
-  watch: {
-    'search': function(value) {
-      return this.options.items.filter(function(item) {
-        return item.category === value;
-      });
+  computed: {
+    filtering: function() {
+      if(this.search) {
+        return this.options.items.filter((item) => {
+          return item.category.toLowerCase() === this.search.toLowerCase();
+        });
+      }
+      return this.options.items;
     }
-  },
+  }
 });
 
 var vm = new Vue({
