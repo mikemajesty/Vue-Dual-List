@@ -24,7 +24,7 @@ Vue.component('celso-dog', {
                         </button> 
                       </div>
                     </div>
-                    <div class='list'>
+                    <div class='list' v-bind:class='options.resizeBox'>
                       <ul>
                         <li v-for='item in filtering'>
                           <a href='#' v-on:click='transferToRight(options.items.indexOf(item))'> 
@@ -44,7 +44,7 @@ Vue.component('celso-dog', {
                           </button> 
                         </div>
                     </div>
-                    <div class='list'>
+                    <div class='list' v-bind:class='options.resizeBox'>
                       <ul>
                         <li v-for='item in options.selectedItems'> 
                           <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))'>
@@ -111,6 +111,7 @@ var vm = new Vue({
       options: {
         label: 'Demo title',
         selectOptions: { initialText: 'SELECT', initialValue: "", isDisable: false, uppercase: true},
+        resizeBox: "lg",
         items: [
           { 'category': 'ALUNDRA', 'name': 'Alundra' },
           { 'category': 'ALUNDRA', 'name': 'Jess' },

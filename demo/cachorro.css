@@ -11,8 +11,24 @@
   border-radius: 4px;
   padding: 10px;
   margin: 5px;
-  height: 150px;
+ 
   overflow-y: scroll;
+}
+
+.excaliburduallist .xs {
+   height: 150px;
+}
+
+.excaliburduallist .md {
+   height: 225px;
+}
+
+.excaliburduallist .lg {
+   height: 350px;
+}
+
+.excaliburduallist .xl {
+   height: 500px;
 }
 
 .excaliburduallist .list ul {
