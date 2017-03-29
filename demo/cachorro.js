@@ -77,8 +77,7 @@ Vue.component('celso-dog', {
         for (var cont = 0; cont < this.options.items.length; cont++) {
           this.options.selectedItems.push(this.options.items[cont]);
         }
-        this.options.items.length = [];
-        this.search = "";
+        this.options.items = [];
       }
     },
      transferToLeft: function(index) {
