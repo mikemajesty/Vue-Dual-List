@@ -19,7 +19,7 @@ Vue.component('celso-dog', {
                   <div class='col-lg-6 col-md-6 col-sm-6'>
                     <div class='row'>
                       <div class='col-lg-8 col-md-8 col-sm-8 pull-right'> 
-                        <button type='button' class='btn btn-default btn-xs' v-on:click='transfer(options.items, options.selectedItems, -1)'> 
+                        <button type='button' class='btn btn-default btn-xs' v-on:click='transferToRight(-1)'> 
                           Move All -&#187; 
                         </button> 
                       </div>
@@ -27,7 +27,7 @@ Vue.component('celso-dog', {
                     <div class='list'>
                       <ul>
                         <li v-for='item in filtering'>
-                          <a href='#' v-on:click='transfer(options.items, options.selectedItems, options.items.indexOf(item))'> 
+                          <a href='#' v-on:click='transferToRight(options.items.indexOf(item))'> 
                             <span> 
                               {{item.category}} -
                             </span>
@@ -39,7 +39,7 @@ Vue.component('celso-dog', {
                   <div class='col-lg-6 col-md-6 col-sm-6'>
                     <div class='row'>
                         <div class='col-lg-7 col-md-7 col-sm-7'> 
-                          <button type='button' class='btn btn-default btn-xs pull-right' v-on:click='transfer(options.selectedItems, options.items, -1)'> 
+                          <button type='button' class='btn btn-default btn-xs pull-right' v-on:click='transferToLeft(-1)'> 
                             &#171;- Move All 
                           </button> 
                         </div>
@@ -47,7 +47,7 @@ Vue.component('celso-dog', {
                     <div class='list'>
                       <ul>
                         <li v-for='item in options.selectedItems'> 
-                          <a href='#' v-on:click='transfer(options.selectedItems, options.items, options.selectedItems.indexOf(item))'>
+                          <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))'>
                              &lArr;&nbsp;{{item.category}} - {{item.name}}
                           </a> 
                         </li>
@@ -69,16 +69,27 @@ Vue.component('celso-dog', {
     };
   },
   methods: {
-    transfer: function (current, to, index) { 
-     
+    transferToRight: function (index) { 
       if (index >= 0) {
-        to.push(current[index]);
-        current.splice(index, 1);
+        this.options.selectedItems.push(this.options.items[index]);
+        this.options.items.splice(index, 1);
       } else {
-        for (var cont = 0; cont < current.length; cont++) {
-          to.push(current[cont]);
+        for (var cont = 0; cont < this.options.items.length; cont++) {
+          this.options.selectedItems.push(this.options.items[cont]);
         }
-        current.length = 0;
+        this.options.items.length = [];
+        this.search = "";
+      }
+    },
+     transferToLeft: function(index) {
+      if (index >= 0) {
+        this.options.items.push(this.options.selectedItems[index]);
+        this.options.selectedItems.splice(index, 1);
+      } else {
+        for (var cont = 0; cont < this.options.selectedItems.length; cont++) {
+          this.options.items.push(this.options.selectedItems[cont]);
+        }
+        this.options.selectedItems = [];
       }
     }
   },
