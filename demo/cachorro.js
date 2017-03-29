@@ -19,7 +19,7 @@ Vue.component('celso-dog', {
                   <div class='col-lg-6 col-md-6 col-sm-6'>
                     <div class='row'>
                       <div class='col-lg-8 col-md-8 col-sm-8 pull-right'> 
-                        <button type='button' class='btn btn-default btn-xs' v-on:click='transfer(options.items, options.selectedItems, -1, true)'> 
+                        <button type='button' class='btn btn-default btn-xs' v-on:click='transfer(options.items, options.selectedItems, -1)'> 
                           Move All -&#187; 
                         </button> 
                       </div>
@@ -69,10 +69,8 @@ Vue.component('celso-dog', {
     };
   },
   methods: {
-    transfer: function(current, to, index, moveAll) {
-      if (moveAll) {
-        this.search = "";
-      }
+    transfer: function (current, to, index) { 
+     
       if (index >= 0) {
         to.push(current[index]);
         current.splice(index, 1);
@@ -98,7 +96,7 @@ Vue.component('celso-dog', {
 
 var vm = new Vue({
   el: '#cachorro',
-  data: function() {
+  data: () => {
     return {
       options: {
         label: 'Demo title',
