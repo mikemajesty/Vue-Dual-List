@@ -7,6 +7,7 @@ Vue.component('celso-dog', {
                         {{options.label}}
                       </h4>
                       <select class='form-control' v-model='search' v-bind:value='search'>
+                        <option :value="options.selectOptions.initialValue" :disabled="options.selectOptions.isDisable" v-if="options.selectOptions && options.selectOptions.initialText">{{options.selectOptions.initialText}}</option> 
                         <option v-for='category in options.categories' v-bind:render='category'> 
                             <b >{{ category.name }}</b> 
                         </option> 
@@ -98,6 +99,7 @@ var vm = new Vue({
     return {
       options: {
         label: 'Demo title',
+        selectOptions: { initialText: 'SELECT', initialValue: "", isDisable: false},
         items: [
           { 'category': 'ALUNDRA', 'name': 'Alundra' },
           { 'category': 'ALUNDRA', 'name': 'Jess' },
