@@ -1,61 +1,10 @@
 Vue.component('celso-dog', {
-  template: `<div class='excaliburduallist'> 
-                <div class='row'>
-                  <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                      <h4>
-                        {{options.label}}
-                      </h4>
-                      <select class='form-control' v-model='search' v-bind:value='search'>
-                        <option :value="options.selectOptions.initialValue" :disabled="options.selectOptions.isDisable" v-if="options.selectOptions && options.selectOptions.initialText">{{options.selectOptions.initialText}}</option> 
-                        <option v-for='category in options.categories' v-bind:render='category'> 
-                            <b >{{ options.selectOptions.uppercase ? category.name.toUpperCase() : category.name}}</b> 
-                        </option> 
-                      </select> 
-                   </div> 
-                  </div>
-                </div>
-                 <div class='row'>
-                  <div class='col-lg-6 col-md-6 col-sm-6'>
-                    <div class='row'>
-                      <div class='col-lg-8 col-md-8 col-sm-8 pull-right'> 
-                        <button type='button' class='btn btn-default btn-xs' v-on:click='transferToRight(-1)'> 
-                          Move All -&#187; 
-                        </button> 
-                      </div>
-                    </div>
-                    <div class='list' v-bind:class='options.resizeBox' style="flex: 1">
-                      <ul>
-                        <li v-for='item in filtering'>
-                          <a href='#' v-on:click='transferToRight(options.items.indexOf(item))'> 
-                            <span> 
-                              {{item.category}} -
-                            </span>
-                           {{item.name}}&nbsp;&rArr;</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class='col-lg-6 col-md-6 col-sm-6'>
-                    <div class='row'>
-                        <div class='col-lg-7 col-md-7 col-sm-7'> 
-                          <button type='button' class='btn btn-default btn-xs pull-right' v-on:click='transferToLeft(-1)'> 
-                            &#171;- Move All 
-                          </button> 
-                        </div>
-                    </div>
-                    <div class='list' v-bind:class='options.resizeBox' style="flex: 1">
-                      <ul>
-                        <li v-for='item in options.selectedItems'> 
-                          <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))'>
-                             &lArr;&nbsp;{{item.category}} - {{item.name}}
-                          </a> 
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>`,
+  name: 'celso-dog',
+  template: `<v-container name='celso-dog' fluid="fluid"> 
+                <v-row>
+                
+                </v-row>
+              </v-container>`,
   props: {
     'options': {
       type: Object,

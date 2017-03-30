@@ -4,6 +4,7 @@ var app = express();
 
 var Vue = require('vue');
 var Vuetify = require('vuetify');
+
 Vue.use(Vuetify);
 
 app.use('/',  express.static(__dirname + '/'));
