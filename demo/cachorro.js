@@ -24,7 +24,7 @@ Vue.component('celso-dog', {
                         </button> 
                       </div>
                     </div>
-                    <div class='list' v-bind:class='options.resizeBox'>
+                    <div class='list' v-bind:class='options.resizeBox' style="flex: 1">
                       <ul>
                         <li v-for='item in filtering'>
                           <a href='#' v-on:click='transferToRight(options.items.indexOf(item))'> 
@@ -44,7 +44,7 @@ Vue.component('celso-dog', {
                           </button> 
                         </div>
                     </div>
-                    <div class='list' v-bind:class='options.resizeBox'>
+                    <div class='list' v-bind:class='options.resizeBox' style="flex: 1">
                       <ul>
                         <li v-for='item in options.selectedItems'> 
                           <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))'>
@@ -69,7 +69,7 @@ Vue.component('celso-dog', {
     };
   },
   methods: {
-    transferToRight: function (index) { 
+    transferToRight: function(index) {
       if (index >= 0) {
         this.options.selectedItems.push(this.options.items[index]);
         this.options.items.splice(index, 1);
@@ -80,7 +80,7 @@ Vue.component('celso-dog', {
         this.options.items = [];
       }
     },
-     transferToLeft: function(index) {
+    transferToLeft: function(index) {
       if (index >= 0) {
         this.options.items.push(this.options.selectedItems[index]);
         this.options.selectedItems.splice(index, 1);
@@ -94,7 +94,7 @@ Vue.component('celso-dog', {
   },
   computed: {
     filtering: function() {
-      if(this.search) {
+      if (this.search) {
         return this.options.items.filter((item) => {
           return item.category.toLowerCase() === this.search.toLowerCase();
         });
@@ -110,7 +110,7 @@ var vm = new Vue({
     return {
       options: {
         label: 'Demo title',
-        selectOptions: { initialText: 'SELECT', initialValue: "", isDisable: false, uppercase: true},
+        selectOptions: { initialText: 'SELECT', initialValue: "", isDisable: false, uppercase: true },
         resizeBox: "lg",
         items: [
           { 'category': 'ALUNDRA', 'name': 'Alundra' },

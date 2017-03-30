@@ -21,5 +21,8 @@
     "materialize-css": "0.98.0",
     "serve-favicon": "2.3.2",
     "vue": "2.2.4"
+  },
+  "devDependencies": {
+    "vuetify": "^0.9.4"
   }
 }
