@@ -2,11 +2,6 @@ var express = require("express");
 var favicon = require('serve-favicon');
 var app = express();
 
-var Vue = require('vue');
-var Vuetify = require('vuetify');
-
-Vue.use(Vuetify);
-
 app.use('/',  express.static(__dirname + '/'));
 
 app.use(favicon(__dirname + '/public/dog.ico'));

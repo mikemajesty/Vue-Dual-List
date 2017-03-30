@@ -1,4 +1,4 @@
-Vue.component('celso-dog', {
+var celsoDog = Vue.component('celso-dog', {
   name: 'celso-dog',
   template: `<v-container name='celso-dog' fluid="fluid"> 
                 <v-row>
@@ -83,5 +83,6 @@ var vm = new Vue({
         selectedItems: []
       }
     };
-  }
+  },
+  components: {celsoDog: celsoDog},
 });
