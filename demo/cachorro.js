@@ -23,20 +23,28 @@ Vue.component('celso-dog', {
                     </md-select>
                   </md-input-container>
 
-                  <md-layout md-flex='50'>
-                    <md-button class="md-raised">Default</md-button>
+                  <md-layout md-flex='50' md-align="center">
+                    <md-button class="md-raised">
+                      {{options.buttonOption.textLeft}}
+                      <md-icon style='padding-bottom: 4px;'>arrow_forward</md-icon>
+                    </md-button>
                   </md-layout>
 
-                  <md-layout md-flex='50'>
-                    <md-button class="md-raised">Default</md-button>
+                  <md-layout md-flex='50' md-align="center">
+                    <md-button class="md-raised">
+                      <md-icon style='padding-bottom: 4px;'>arrow_back</md-icon>
+                      {{options.buttonOption.textRight}}
+                    </md-button>
                   </md-layout>
 
-                  <md-layout md-flex='50' class='list'>
+                  <md-layout md-flex class='list'>
                     md-flex-medium="33" <br>
                     md-hide-xsmall
                   </md-layout>
 
-                  <md-layout md-flex='50' class='list'>
+                  <md-layout md-flex='5'></md-layout>
+
+                  <md-layout md-flex class='list'>
                     md-flex-medium="33" <br>
                     md-hide-small
                   </md-layout>
@@ -98,6 +106,7 @@ var vm = new Vue({
       options: {
         label: 'Demo title',
         selectOptions: { uppercase: true, isRequired: false },
+        buttonOption: { textLeft: 'Move All', textRight: 'Move All' },
         resizeBox: "lg",
         items: [
           { 'category': 'ALUNDRA', 'name': 'Alundra' },
