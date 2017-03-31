@@ -24,29 +24,41 @@ Vue.component('celso-dog', {
                   </md-input-container>
 
                   <md-layout md-flex='50' md-align="center">
-                    <md-button class="md-raised">
+                    <md-button class="md-raised" v-on:click.native='transferToRight(options.items.indexOf(item))'>
                       {{options.buttonOption.textLeft}}
                       <md-icon style='padding-bottom: 4px;'>arrow_forward</md-icon>
                     </md-button>
                   </md-layout>
 
                   <md-layout md-flex='50' md-align="center">
-                    <md-button class="md-raised">
+                    <md-button class="md-raised" v-on:click.native='transferToLeft(-1)'>
                       <md-icon style='padding-bottom: 4px;'>arrow_back</md-icon>
                       {{options.buttonOption.textRight}}
                     </md-button>
                   </md-layout>
 
                   <md-layout md-flex class='list'>
-                    md-flex-medium="33" <br>
-                    md-hide-xsmall
+                    <ul>
+                      <li v-for='item in filtering'>
+                        <a href='#' v-on:click='transferToRight(options.items.indexOf(item))'> 
+                          <span> 
+                            {{item.category}} -
+                          </span>
+                          {{item.name}}&nbsp;&rArr;</a>
+                      </li>
+                    </ul>
                   </md-layout>
 
-                  <md-layout md-flex='5'></md-layout>
+                  <div style='padding-left: 10px'/>
 
                   <md-layout md-flex class='list'>
-                    md-flex-medium="33" <br>
-                    md-hide-small
+                    <ul>
+                      <li v-for='item in options.selectedItems'> 
+                        <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))'>
+                            &lArr;&nbsp;{{item.category}} - {{item.name}}
+                        </a> 
+                      </li>
+                    </ul>
                   </md-layout>
                 </md-layout>
 
