@@ -4,7 +4,8 @@ Vue.component('celso-dog', {
   template: `<md-layout md-gutter class='cachorro'>
 
                 <md-layout md-flex-small="100" md-flex-medium="100" md-hide-xsmall>
-                  <md-input-container v-if='options.selectOptions.isRequired'>
+
+                  <md-input-container v-if='options.selectOptions.isRequired' style='margin-bottom: 0px'>
                     <label for="filter">{{options.label}}</label>
                     <md-select name="filter" id="filter" v-model="search" required>
                       <md-option v-for='item in options.categories' value='item.id'>
@@ -13,7 +14,7 @@ Vue.component('celso-dog', {
                     </md-select>
                   </md-input-container>
 
-                  <md-input-container v-if='!options.selectOptions.isRequired'>
+                  <md-input-container v-if='!options.selectOptions.isRequired' style='margin-bottom: 0px'>
                     <label for="filter">{{options.label}}</label>
                     <md-select name="filter" id="filter" v-model="search">
                       <md-option v-for='item in options.categories' value='item.id'>
@@ -22,12 +23,20 @@ Vue.component('celso-dog', {
                     </md-select>
                   </md-input-container>
 
-                  <md-layout md-flex class='list'>
+                  <md-layout md-flex='50'>
+                    <md-button class="md-raised">Default</md-button>
+                  </md-layout>
+
+                  <md-layout md-flex='50'>
+                    <md-button class="md-raised">Default</md-button>
+                  </md-layout>
+
+                  <md-layout md-flex='50' class='list'>
                     md-flex-medium="33" <br>
                     md-hide-xsmall
                   </md-layout>
 
-                  <md-layout md-flex class='list m-r'>
+                  <md-layout md-flex='50' class='list'>
                     md-flex-medium="33" <br>
                     md-hide-small
                   </md-layout>
@@ -108,7 +117,7 @@ var vm = new Vue({
           { 'category': 'CHRONO CROSS', 'name': 'Harle' },
 
         ],
-        categories: [{ id:'ALUNDRA', category: 'Alundra' }, { id:'WILD ARMS', category: 'WILD ARMS' }, { id:'CHRONO CROSS', category: 'CHRONO CROSS' }],
+        categories: [{ id: 'ALUNDRA', category: 'Alundra' }, { id: 'WILD ARMS', category: 'WILD ARMS' }, { id: 'CHRONO CROSS', category: 'CHRONO CROSS' }],
         selectedItems: []
       }
     };
