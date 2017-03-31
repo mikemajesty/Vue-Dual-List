@@ -1,6 +1,6 @@
 {
   "name": "vue-dual-list",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mikemajesty/vue-dual-list.git"
+    "url": "git+ssh://git@github.com/mikemajesty/Vue-Dual-List.git"
   },
   "author": "Mike Lima",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mikemajesty/vue-dual-list/issues"
+    "url": "https://github.com/mikemajesty/Vue-Dual-List/issues"
   },
-  "homepage": "https://github.com/mikemajesty/vue-dual-list#readme",
+  "homepage": "https://github.com/mikemajesty/Vue-Dual-List#readme",
   "dependencies": {
     "express": "4.15.2",
     "serve-favicon": "2.3.2",

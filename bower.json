@@ -1,0 +1,18 @@
+{
+  "name": "vue-dual-list",
+  "version": "0.0.1",
+  "description": "vue dual list",
+  "main": "server.js",
+  "authors": [
+    "Mike Lima"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mikemajesty/Vue-Dual-List",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
