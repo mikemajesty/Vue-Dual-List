@@ -5,10 +5,6 @@
   overflow-y: scroll;
 }
 
-.cachorro .m-r {
-   margin-left: 8px;
-}
-
 .cachorro .xs {
    height: 150px;
 }
@@ -23,4 +19,8 @@
 
 .cachorro .xl {
    height: 500px;
+}
+
+.cachorro ul.pd {
+  padding-left: 12px;
 }

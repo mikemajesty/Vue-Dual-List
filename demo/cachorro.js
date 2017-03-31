@@ -8,7 +8,7 @@ Vue.component('celso-dog', {
                   <md-input-container v-if='options.selectOptions.isRequired' style='margin-bottom: 0px'>
                     <label for="filter">{{options.label}}</label>
                     <md-select name="filter" id="filter" v-model="search" required>
-                      <md-option v-for='item in options.categories' value='item.id'>
+                      <md-option v-for='item in options.categories' :value='item.id'>
                          <b >{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b> 
                       </md-option>
                     </md-select>
@@ -17,7 +17,8 @@ Vue.component('celso-dog', {
                   <md-input-container v-if='!options.selectOptions.isRequired' style='margin-bottom: 0px'>
                     <label for="filter">{{options.label}}</label>
                     <md-select name="filter" id="filter" v-model="search">
-                      <md-option v-for='item in options.categories' value='item.id'>
+                      <md-option value=''></md-option>
+                      <md-option v-for='item in options.categories' :value='item.id'>
                          <b >{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b> 
                       </md-option>
                     </md-select>
@@ -38,9 +39,9 @@ Vue.component('celso-dog', {
                   </md-layout>
 
                   <md-layout md-flex class='list'>
-                    <ul>
-                      <li v-for='item in filtering'>
-                        <a href='#' v-on:click='transferToRight(options.items.indexOf(item))'> 
+                    <ul class='pd'>
+                      <li v-for='item in filtering' style='color: black;'>
+                        <a href='#' v-on:click='transferToRight(options.items.indexOf(item))' style='color: blue;'> 
                           <span> 
                             {{item.category}} -
                           </span>
@@ -52,9 +53,9 @@ Vue.component('celso-dog', {
                   <div style='padding-left: 10px'/>
 
                   <md-layout md-flex class='list'>
-                    <ul>
+                    <ul class='pd'>
                       <li v-for='item in options.selectedItems'> 
-                        <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))'>
+                        <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))' style='color: blue;'>
                             &lArr;&nbsp;{{item.category}} - {{item.name}}
                         </a> 
                       </li>
@@ -73,6 +74,7 @@ Vue.component('celso-dog', {
   data: function() {
     return {
       search: '',
+      item: {}
     };
   },
   methods: {
@@ -117,7 +119,7 @@ var vm = new Vue({
     return {
       options: {
         label: 'Demo title',
-        selectOptions: { uppercase: true, isRequired: false },
+        selectOptions: { uppercase: true, isRequired: true },
         buttonOption: { textLeft: 'Move All', textRight: 'Move All' },
         resizeBox: "lg",
         items: [
