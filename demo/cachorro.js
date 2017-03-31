@@ -41,7 +41,7 @@ Vue.component('celso-dog', {
                   <md-layout md-flex class='list' v-bind:class="options.resizeBox">
                     <ul class='pd'>
                       <li v-for='item in filtering'>
-                        <a href='#' v-on:click='transferToRight(options.items.indexOf(item))' v-bind:style="{ color: options.colorItems }"> 
+                        <a href='#' v-on:click='transferToRight(options.items.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF' }"> 
                           <span v-if='!search'> 
                             {{item.category}} -
                           </span>
@@ -55,7 +55,7 @@ Vue.component('celso-dog', {
                   <md-layout md-flex class='list' v-bind:class="options.resizeBox">
                     <ul class='pd'>
                       <li v-for='item in options.selectedItems'> 
-                        <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))' v-bind:style="{ color: options.colorItems }">
+                        <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF'}">
                             &lArr;&nbsp;{{item.category}} - {{item.name}}
                         </a> 
                       </li>
@@ -140,11 +140,10 @@ var vm = new Vue({
           { 'category': 'CHRONO CROSS', 'name': 'Harle' },
 
         ],
-        colorItems: 'blue',
+        colorItems: '#1E90FF',
         categories: [{ id: 'ALUNDRA', category: 'Alundra' }, { id: 'WILD ARMS', category: 'WILD ARMS' }, { id: 'CHRONO CROSS', category: 'CHRONO CROSS' }],
         selectedItems: []
       }
     };
   }
 });
-//<v-select v-model='search' v-bind:label='options.label' v-bind:value='text' v-bind:items='options.categories'> </v-select>
