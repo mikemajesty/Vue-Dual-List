@@ -1,39 +1,18 @@
-var celsoDog = Vue.component('celso-dog', {
-  name: 'celso-dog',
-  template: `<v-container name='celso-dog' fluid="fluid"> 
-                <v-row>
-                   <v-col xs12="xs12">
-                      <v-card class="primary">
-                        <v-card-text>12</v-card-text>
-                      </v-card>
-                    </v-col>
-                    <v-col xs6="xs6" v-for="i in 2">
-                      <v-card class="secondary">
-                        <v-card-text>6</v-card-text>
-                      </v-card>
-                    </v-col>
-                    <v-col xs4="xs4" v-for="i in 3">
-                      <v-card class="primary">
-                        <v-card-text>4</v-card-text>
-                      </v-card>
-                    </v-col>
-                    <v-col xs3="xs3" v-for="i in 4">
-                      <v-card class="secondary">
-                        <v-card-text>3</v-card-text>
-                      </v-card>
-                    </v-col>
-                    <v-col xs2="xs2" v-for="i in 6">
-                      <v-card class="primary">
-                        <v-card-text>2</v-card-text>
-                      </v-card>
-                    </v-col>
-                    <v-col xs1="xs1" v-for="i in 12">
-                      <v-card class="secondary">
-                        <v-card-text>1</v-card-text>
-                      </v-card>
-                    </v-col>
-                </v-row>
-              </v-container>`,
+Vue.use(VueMaterial);
+
+Vue.component('celso-dog', {
+  template: `<md-layout md-gutter>
+                <md-layout md-flex-small="100" md-flex-medium="100" md-hide-xsmall>
+                  <md-input-container>
+                    <label for="filter">{{options.label}}</label>
+                    <md-select name="filter" id="filter" v-model="search">
+                      <md-option v-for='item in options.categories' value='item.id'>
+                         <b >{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b> 
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                </md-layout>
+             </md-layout>`,
   props: {
     'options': {
       type: Object,
@@ -43,7 +22,7 @@ var celsoDog = Vue.component('celso-dog', {
   },
   data: function() {
     return {
-      search: ''
+      search: '',
     };
   },
   methods: {
@@ -88,7 +67,7 @@ var vm = new Vue({
     return {
       options: {
         label: 'Demo title',
-        selectOptions: { initialText: 'SELECT', initialValue: "", isDisable: false, uppercase: true },
+        selectOptions: { uppercase: true },
         resizeBox: "lg",
         items: [
           { 'category': 'ALUNDRA', 'name': 'Alundra' },
@@ -108,10 +87,10 @@ var vm = new Vue({
           { 'category': 'CHRONO CROSS', 'name': 'Harle' },
 
         ],
-        categories: [{ name: 'ALUNDRA' }, { name: 'WILD ARMS' }, { name: 'CHRONO CROSS' }],
+        categories: [{ id:'ALUNDRA', category: 'Alundra' }, { id:'WILD ARMS', category: 'WILD ARMS' }, { id:'CHRONO CROSS', category: 'CHRONO CROSS' }],
         selectedItems: []
       }
     };
-  },
-  components: {celsoDog: celsoDog},
+  }
 });
+//<v-select v-model='search' v-bind:label='options.label' v-bind:value='text' v-bind:items='options.categories'> </v-select>

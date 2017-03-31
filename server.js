@@ -2,7 +2,7 @@ var express = require("express");
 var favicon = require('serve-favicon');
 var app = express();
 
-app.use('/',  express.static(__dirname + '/'));
+app.use('/', express.static(__dirname + '/'));
 
 app.use(favicon(__dirname + '/public/dog.ico'));
 
@@ -13,5 +13,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(PORT, function() {
-    console.log('Server Running on '+ PORT);
+  console.log('Server Running on ' + PORT);
 });

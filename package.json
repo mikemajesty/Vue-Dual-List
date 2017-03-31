@@ -19,8 +19,8 @@
   "dependencies": {
     "express": "4.15.2",
     "serve-favicon": "2.3.2",
-    "vue": "2.2.4"
+    "vue": "2.2.4",
+    "vue-material": "^0.7.1"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
