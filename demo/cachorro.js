@@ -3,7 +3,15 @@ Vue.use(VueMaterial);
 Vue.component('celso-dog', {
   template: `<md-layout md-gutter>
                 <md-layout md-flex-small="100" md-flex-medium="100" md-hide-xsmall>
-                  <md-input-container>
+                  <md-input-container v-if='options.selectOptions.isRequired'>
+                    <label for="filter">{{options.label}}</label>
+                    <md-select name="filter" id="filter" v-model="search" required>
+                      <md-option v-for='item in options.categories' value='item.id'>
+                         <b >{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b> 
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                  <md-input-container v-if='!options.selectOptions.isRequired'>
                     <label for="filter">{{options.label}}</label>
                     <md-select name="filter" id="filter" v-model="search">
                       <md-option v-for='item in options.categories' value='item.id'>
@@ -67,7 +75,7 @@ var vm = new Vue({
     return {
       options: {
         label: 'Demo title',
-        selectOptions: { uppercase: true },
+        selectOptions: { uppercase: true, isRequired: false },
         resizeBox: "lg",
         items: [
           { 'category': 'ALUNDRA', 'name': 'Alundra' },
