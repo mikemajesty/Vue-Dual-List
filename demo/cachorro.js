@@ -2,7 +2,36 @@ var celsoDog = Vue.component('celso-dog', {
   name: 'celso-dog',
   template: `<v-container name='celso-dog' fluid="fluid"> 
                 <v-row>
-                
+                   <v-col xs12="xs12">
+                      <v-card class="primary">
+                        <v-card-text>12</v-card-text>
+                      </v-card>
+                    </v-col>
+                    <v-col xs6="xs6" v-for="i in 2">
+                      <v-card class="secondary">
+                        <v-card-text>6</v-card-text>
+                      </v-card>
+                    </v-col>
+                    <v-col xs4="xs4" v-for="i in 3">
+                      <v-card class="primary">
+                        <v-card-text>4</v-card-text>
+                      </v-card>
+                    </v-col>
+                    <v-col xs3="xs3" v-for="i in 4">
+                      <v-card class="secondary">
+                        <v-card-text>3</v-card-text>
+                      </v-card>
+                    </v-col>
+                    <v-col xs2="xs2" v-for="i in 6">
+                      <v-card class="primary">
+                        <v-card-text>2</v-card-text>
+                      </v-card>
+                    </v-col>
+                    <v-col xs1="xs1" v-for="i in 12">
+                      <v-card class="secondary">
+                        <v-card-text>1</v-card-text>
+                      </v-card>
+                    </v-col>
                 </v-row>
               </v-container>`,
   props: {
