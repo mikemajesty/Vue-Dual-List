@@ -38,11 +38,11 @@ Vue.component('celso-dog', {
                     </md-button>
                   </md-layout>
 
-                  <md-layout md-flex class='list'>
+                  <md-layout md-flex class='list' v-bind:class="options.resizeBox">
                     <ul class='pd'>
                       <li v-for='item in filtering' style='color: black;'>
                         <a href='#' v-on:click='transferToRight(options.items.indexOf(item))' style='color: blue;'> 
-                          <span> 
+                          <span v-if='!search'> 
                             {{item.category}} -
                           </span>
                           {{item.name}}&nbsp;&rArr;</a>
@@ -52,7 +52,7 @@ Vue.component('celso-dog', {
 
                   <div style='padding-left: 10px'/>
 
-                  <md-layout md-flex class='list'>
+                  <md-layout md-flex class='list' v-bind:class="options.resizeBox">
                     <ul class='pd'>
                       <li v-for='item in options.selectedItems'> 
                         <a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))' style='color: blue;'>
@@ -119,9 +119,9 @@ var vm = new Vue({
     return {
       options: {
         label: 'Demo title',
-        selectOptions: { uppercase: true, isRequired: true },
+        selectOptions: { uppercase: true, isRequired: false },
         buttonOption: { textLeft: 'Move All', textRight: 'Move All' },
-        resizeBox: "lg",
+        resizeBox: "md",
         items: [
           { 'category': 'ALUNDRA', 'name': 'Alundra' },
           { 'category': 'ALUNDRA', 'name': 'Jess' },
