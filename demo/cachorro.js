@@ -34,7 +34,7 @@ Vue.component('celso-dog', {
                   <md-layout md-flex='50' md-align="center">
                     <md-button class="md-raised" v-on:click.native='transferToLeft(-1)'>
                       <md-icon style='padding-bottom: 4px;'>arrow_back</md-icon>
-                      {{options.buttonOption.textRight}}
+                      {{ options.buttonOption.textRight }}
                     </md-button>
                   </md-layout>
 
@@ -43,9 +43,9 @@ Vue.component('celso-dog', {
                       <li v-for='item in filtering'>
                         <a href='#' v-on:click='transferToRight(options.items.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF' }"> 
                           <span v-if='!search'> 
-                            {{item.category}} -
+                            {{ item.category }} -
                           </span>
-                          {{item.name}}&nbsp;&rArr;</a>
+                          {{ item.name }}&nbsp;&rArr;</a>
                       </li>
                     </ul>
                   </md-layout>
