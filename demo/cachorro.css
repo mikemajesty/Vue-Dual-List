@@ -1,47 +1,26 @@
-.excaliburduallist label {
-  margin: 10px;
-}
-
-.excaliburduallist .btn {
-  margin: 10px;
-}
-
-.excaliburduallist .list {
+.cachorro .list {
   border: 1px solid #999;
   border-radius: 4px;
   padding: 10px;
-  margin: 5px;
- 
   overflow-y: scroll;
 }
 
-.excaliburduallist .xs {
+.cachorro .m-r {
+   margin-left: 8px;
+}
+
+.cachorro .xs {
    height: 150px;
 }
 
-.excaliburduallist .md {
+.cachorro .md {
    height: 225px;
 }
 
-.excaliburduallist .lg {
+.cachorro .lg {
    height: 350px;
 }
 
-.excaliburduallist .xl {
+.cachorro .xl {
    height: 500px;
-}
-
-.excaliburduallist .list ul {
-  list-style: none;
-  padding-left: 0px;
-}
-
-.excaliburduallist .list ul li {
-  width: 100%;
-  padding: 4px 8px 4px 4px;
-  border-bottom: 1px dotted #CFCFCF;
-}
-
-.excaliburduallist .list ul li a:hover {
-  text-decoration: none;
 }

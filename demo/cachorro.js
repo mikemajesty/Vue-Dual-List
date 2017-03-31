@@ -1,7 +1,8 @@
 Vue.use(VueMaterial);
 
 Vue.component('celso-dog', {
-  template: `<md-layout md-gutter>
+  template: `<md-layout md-gutter class='cachorro'>
+
                 <md-layout md-flex-small="100" md-flex-medium="100" md-hide-xsmall>
                   <md-input-container v-if='options.selectOptions.isRequired'>
                     <label for="filter">{{options.label}}</label>
@@ -11,6 +12,7 @@ Vue.component('celso-dog', {
                       </md-option>
                     </md-select>
                   </md-input-container>
+
                   <md-input-container v-if='!options.selectOptions.isRequired'>
                     <label for="filter">{{options.label}}</label>
                     <md-select name="filter" id="filter" v-model="search">
@@ -19,7 +21,18 @@ Vue.component('celso-dog', {
                       </md-option>
                     </md-select>
                   </md-input-container>
+
+                  <md-layout md-flex class='list'>
+                    md-flex-medium="33" <br>
+                    md-hide-xsmall
+                  </md-layout>
+
+                  <md-layout md-flex class='list m-r'>
+                    md-flex-medium="33" <br>
+                    md-hide-small
+                  </md-layout>
                 </md-layout>
+
              </md-layout>`,
   props: {
     'options': {
