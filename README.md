@@ -1,1 +1,1 @@
-# cachorro-dual-list
+# vue-dual-list

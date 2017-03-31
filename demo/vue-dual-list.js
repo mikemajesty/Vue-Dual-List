@@ -1,7 +1,7 @@
 Vue.use(VueMaterial);
 
-Vue.component('celso-dog', {
-  template: `<md-layout md-gutter class='cachorro'>
+var celsoDog = Vue.component('vueDualList', {
+  template: `<md-layout md-gutter class='vue-dual-list'>
 
                 <md-layout md-flex-small="100" md-flex-medium="100" md-hide-xsmall>
 
@@ -114,7 +114,7 @@ Vue.component('celso-dog', {
 });
 
 var vm = new Vue({
-  el: '#cachorro',
+  el: '#vueduallist',
   data: () => {
     return {
       options: {

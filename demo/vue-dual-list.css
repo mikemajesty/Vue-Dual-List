@@ -1,26 +1,26 @@
-.cachorro .list {
+.vue-dual-list .list {
   border: 1px solid #999;
   border-radius: 4px;
   padding: 10px;
   overflow-y: scroll;
 }
 
-.cachorro .xs {
+.vue-dual-list .xs {
    height: 150px;
 }
 
-.cachorro .md {
+.vue-dual-list .md {
    height: 225px;
 }
 
-.cachorro .lg {
+.vue-dual-list .lg {
    height: 350px;
 }
 
-.cachorro .xl {
+.vue-dual-list .xl {
    height: 500px;
 }
 
-.cachorro ul.pd {
+.vue-dual-list ul.pd {
   padding-left: 12px;
 }

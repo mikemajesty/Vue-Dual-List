@@ -1,5 +1,5 @@
 {
-  "name": "cachorro-dual-list",
+  "name": "vue-dual-list",
   "version": "0.0.2",
   "description": "",
   "main": "server.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mikemajesty/cachorro-dual-list.git"
+    "url": "git+ssh://git@github.com/mikemajesty/vue-dual-list.git"
   },
   "author": "Mike Lima",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mikemajesty/cachorro-dual-list/issues"
+    "url": "https://github.com/mikemajesty/vue-dual-list/issues"
   },
-  "homepage": "https://github.com/mikemajesty/cachorro-dual-list#readme",
+  "homepage": "https://github.com/mikemajesty/vue-dual-list#readme",
   "dependencies": {
     "express": "4.15.2",
     "serve-favicon": "2.3.2",
