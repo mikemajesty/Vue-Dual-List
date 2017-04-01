@@ -8,7 +8,9 @@ module.exports = {
     filename: 'build.js',
     chunkFilename: '[name].js'
   },
-
+  resolve: {
+    alias: { vue: 'vue/dist/vue.js' }
+  },
   module: {
     loaders: [{
         test: /\.vue$/,

@@ -1,8 +1,6 @@
 <script>
-  import VueStroll from '../vue-dual-list.vue';
-	
   export default {
-    data() {
+    data: () => {
       return {
         options: {
           label: 'Demo title',

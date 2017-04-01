@@ -1,5 +1,3 @@
-Vue.use(VueMaterial);
-
 <template lang="html">
 	<md-layout md-gutter class='vue-dual-list'>
 		<md-layout md-flex-small="100" md-flex-medium="100" md-hide-xsmall>
@@ -94,9 +92,13 @@ Vue.use(VueMaterial);
 </style>
 
 <script>
+  import Vue from 'vue';
+  import VueMaterial from 'vue-material';
+
   Vue.use(VueMaterial);
+
   export default {
-		name: 'vue-dual-list',
+    name: 'vue-dual-list',
     props: {
       'options': {
         type: Object,
