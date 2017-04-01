@@ -5,7 +5,7 @@
 			<md-input-container v-if='options.selectOptions.isRequired' style='margin-bottom: 0px'>
 				<label for="filter">{{options.label}}</label>
 				<md-select name="filter" id="filter" v-model="search" required>
-					<md-option v-for='item in options.categories' :value='item.id'>
+					<md-option v-for='item in options.categories' :value='item.id' :key="item.id">
 						<b>{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b>
 					</md-option>
 				</md-select>
@@ -15,7 +15,7 @@
 				<label for="filter">{{options.label}}</label>
 				<md-select name="filter" id="filter" v-model="search">
 					<md-option value=''></md-option>
-					<md-option v-for='item in options.categories' :value='item.id'>
+					<md-option v-for='item in options.categories' :value='item.id' :key="item.id">
 						<b>{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b>
 					</md-option>
 				</md-select>
@@ -37,7 +37,7 @@
 
 			<md-layout md-flex class='list' v-bind:class="options.resizeBox">
 				<ul class='pd'>
-					<li v-for='item in filtering'>
+					<li v-for='item in filtering' :key="item.id">
 						<a href='#' v-on:click='transferToRight(options.items.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF' }">
 							<span v-if='!search'> 
 								{{ item.category }} -
@@ -50,7 +50,7 @@
 
 			<md-layout md-flex class='list' v-bind:class="options.resizeBox">
 				<ul class='pd'>
-					<li v-for='item in options.selectedItems'>
+					<li v-for='item in options.selectedItems' :key="item.id">
 						<a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF'}">
 								&lArr;&nbsp;{{item.category}} - {{item.name}}
 						</a>
