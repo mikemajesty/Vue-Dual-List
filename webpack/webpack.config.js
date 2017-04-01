@@ -10,8 +10,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
-      {
+    loaders: [{
         test: /\.vue$/,
         loader: 'vue-loader'
       },
@@ -21,14 +20,13 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: ["es2015"],
-          plugins: ["transform-object-rest-spread","transform-vue-jsx"]
+          plugins: ["transform-object-rest-spread", "transform-vue-jsx"]
         }
       },
       {
         test: /\.css$/,
-        loaders: ['style','css']
+        loaders: ['style', 'css']
       }
     ]
   }
-
 };
