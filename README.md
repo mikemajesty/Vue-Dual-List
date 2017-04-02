@@ -57,6 +57,18 @@ new Vue({
 ```Html
   <vue-dual-list id="vueduallist" :options="options"></vue-dual-list>
 ```
+##### Dual list options
+
+* **options: {label}:**(optional): Label that will be displayed in the directive input text.;
+* **options.inputOptions: {uppercase}**(required): Indicates if the letters in input text it will be uppercase.;
+* **options.inputOptions: {isRequired}**(required): Indicates if the letters in input text it will be required.;
+* **options.buttonOption: {textLeft}**(optional): Left button text.;
+* **options.buttonOption: {textRight}**(optional): Right button text.;
+* **options.resizeBox: **(optional): Height of the items box.;
+* **options.items: **(required): Items that will be on the list.;
+* **options.colorItems: **(optional): Color of the items that will be on the list.;
+* **options.selectedItems: **(optional): Items selected by the user.;
+
 #### Used versions
 
 ##### vue 
