@@ -4,21 +4,12 @@
 
 			<md-input-container v-if='options.selectOptions.isRequired' style='margin-bottom: 0px'>
 				<label for="filter">{{options.label}}</label>
-				<md-select name="filter" id="filter" v-model="search" required>
-					<md-option v-for='item in options.categories' :value='item.id' :key="item.id">
-						<b>{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b>
-					</md-option>
-				</md-select>
+        <md-input v-model="search" required></md-input>
 			</md-input-container>
 
 			<md-input-container v-if='!options.selectOptions.isRequired' style='margin-bottom: 0px'>
 				<label for="filter">{{options.label}}</label>
-				<md-select name="filter" id="filter" v-model="search">
-					<md-option value=''></md-option>
-					<md-option v-for='item in options.categories' :value='item.id' :key="item.id">
-						<b>{{ options.selectOptions.uppercase ? item.category.toUpperCase() : item.category}}</b>
-					</md-option>
-				</md-select>
+        <md-input v-model="search"></md-input>
 			</md-input-container>
 
 			<md-layout md-flex='50' md-align="center">
@@ -39,9 +30,7 @@
 				<ul class='pd'>
 					<li v-for='item in filtering' :key="item.name">
 						<a href='#' v-on:click='transferToRight(options.items.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF' }">
-							<span v-if='!search'> 
-								{{ item.category }} -
-							</span> {{ item.name }}&nbsp;&rArr;</a>
+					    {{ item.name }}&nbsp;&rArr;</a>
 					</li>
 				</ul>
 			</md-layout>
@@ -52,7 +41,7 @@
 				<ul class='pd'>
 					<li v-for='item in options.selectedItems' :key="item.name">
 						<a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF'}">
-								&lArr;&nbsp;{{item.category}} - {{item.name}}
+								&lArr;&nbsp;{{ item.name }}
 						</a>
 					</li>
 				</ul>
@@ -115,6 +104,7 @@
     methods: {
       transferToRight: function(index) {
         if (index >= 0) {
+          this.search = '';
           this.options.selectedItems.push(this.options.items[index]);
           this.options.items.splice(index, 1);
         } else {
@@ -130,6 +120,7 @@
       },
       transferToLeft: function(index) {
         if (index >= 0) {
+          this.search = '';
           this.options.items.push(this.options.selectedItems[index]);
           this.options.selectedItems.splice(index, 1);
 
@@ -149,7 +140,7 @@
       filtering: function() {
         if (this.search) {
           return this.options.items.filter((item) => {
-            return item.category.toLowerCase() === this.search.toLowerCase();
+            return item.name.toLowerCase().indexOf(this.search) !== -1;
           });
         }
         return this.options.items;
