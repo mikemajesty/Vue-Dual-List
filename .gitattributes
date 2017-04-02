@@ -1,2 +1,3 @@
-webpack/* linguist-vendored
-demo/*.js linguist-vendored
+webpack/webpack.config.js linguist-vendored
+demo/main.js linguist-vendored
+build/* linguist-vendored
