@@ -1,24 +1,16 @@
 <html>
-
-<head>
-  <title>Vue Dual List</title>
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-  <link href="https://unpkg.com/vue-material@0.7.1/dist/vue-material.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/demo/vue-dual-list.css">
-</head>
-
-<body>
-  <div class="row">
-    <div id="vueduallist">
-      <vue-dual-list :options="options"></vue-dual-list>
-      <br> {{options.selectedItems}}
-    </div>
-  </div>
-</body>
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/vue-material@0.7.1"></script>
-<script src="../build/build.js"></script>
-<!--<script src="/demo/vue-dual-list.vue"></script>-->
-
+  <head>
+    <title>Vue Dual List</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/vue-material@0.7.1/dist/vue-material.css" rel="stylesheet" type="text/css">
+  </head>
+    <body>
+      <div id="vueduallist">
+        <vue-dual-list :options="options"></vue-dual-list>
+        <br> {{options.selectedItems}}
+      </div>
+    </body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="../build/build.js"></script>
 </html>

@@ -10,7 +10,7 @@ new Vue({
     return {
       options: {
         label: 'Demo title',
-        selectOptions: { uppercase: true, isRequired: false },
+        inputOptions: { uppercase: true, isRequired: true },
         buttonOption: { textLeft: 'Move All', textRight: 'Move All' },
         resizeBox: "md",
         items: [
@@ -41,12 +41,3 @@ new Vue({
     'VueDualList': VueDualList
   }
 });
-/**
-var Vue = require('vue');
-var App = require('./App.vue');
-
-new Vue({
-  el: '#vueduallist',
-  components: { App: App }
-});
- */

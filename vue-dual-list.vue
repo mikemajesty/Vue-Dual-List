@@ -2,12 +2,12 @@
 	<md-layout md-gutter class='vue-dual-list'>
 		<md-layout md-flex-small="100" md-flex-medium="100" md-hide-xsmall>
 
-			<md-input-container v-if='options.selectOptions.isRequired' style='margin-bottom: 0px'>
+			<md-input-container v-if='options.inputOptions.isRequired' style='margin-bottom: 0px'>
 				<label for="filter">{{options.label}}</label>
         <md-input v-model="search" required></md-input>
 			</md-input-container>
 
-			<md-input-container v-if='!options.selectOptions.isRequired' style='margin-bottom: 0px'>
+			<md-input-container v-if='!options.inputOptions.isRequired' style='margin-bottom: 0px'>
 				<label for="filter">{{options.label}}</label>
         <md-input v-model="search"></md-input>
 			</md-input-container>
