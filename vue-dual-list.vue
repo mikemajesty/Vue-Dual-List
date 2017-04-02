@@ -37,7 +37,7 @@
 
 			<md-layout md-flex class='list' v-bind:class="options.resizeBox">
 				<ul class='pd'>
-					<li v-for='item in filtering' :key="item.id">
+					<li v-for='item in filtering' :key="item.name">
 						<a href='#' v-on:click='transferToRight(options.items.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF' }">
 							<span v-if='!search'> 
 								{{ item.category }} -
@@ -50,7 +50,7 @@
 
 			<md-layout md-flex class='list' v-bind:class="options.resizeBox">
 				<ul class='pd'>
-					<li v-for='item in options.selectedItems' :key="item.id">
+					<li v-for='item in options.selectedItems' :key="item.name">
 						<a href='#' v-on:click='transferToLeft(options.selectedItems.indexOf(item))' v-bind:style="{ color: options.colorItems || '#1E90FF'}">
 								&lArr;&nbsp;{{item.category}} - {{item.name}}
 						</a>
@@ -132,6 +132,7 @@
         if (index >= 0) {
           this.options.items.push(this.options.selectedItems[index]);
           this.options.selectedItems.splice(index, 1);
+
         } else {
           this.search = '';
           for (var cont = 0; cont < this.options.selectedItems.length; cont++) {

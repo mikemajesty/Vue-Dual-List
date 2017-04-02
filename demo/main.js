@@ -1,12 +1,12 @@
 var VueDualList = require('../vue-dual-list.vue');
-import VueMaterial from 'vue-material';
+var VueMaterial = require('vue-material');
 
 Vue.use(VueMaterial);
 
 new Vue({
   el: '#vueduallist',
   name: 'vue-dual-list',
-  data: () => {
+  data: function() {
     return {
       options: {
         label: 'Demo title',
