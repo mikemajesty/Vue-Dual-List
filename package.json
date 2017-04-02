@@ -1,6 +1,6 @@
 {
   "name": "vue-dual-list",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "component/vue-dual-list.vue",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/mikemajesty/Vue-Dual-List#readme",
   "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
     "express": "4.15.2",
     "serve-favicon": "2.3.2",
     "vue": "2.2.6",
