@@ -32,7 +32,6 @@ new Vue({
 
         ],
         colorItems: '#1E90FF',
-        categories: [{ id: 'ALUNDRA', category: 'Alundra' }, { id: 'WILD ARMS', category: 'WILD ARMS' }, { id: 'CHRONO CROSS', category: 'CHRONO CROSS' }],
         selectedItems: []
       }
     };

@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f2436891e3320cc50041"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "877490601745f60da28a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -602,7 +602,6 @@
 	        resizeBox: "md",
 	        items: [{ 'id': '1', 'name': 'Alundra' }, { 'id': '2', 'name': 'Jess' }, { 'id': '3', 'name': 'Meia' }, { 'id': '4', 'name': 'Melzas' }, { 'id': '5', 'name': 'Septimus' }, { 'id': '6', 'name': 'Rudy Roughknight' }, { 'id': '7', 'name': 'Jack Van Burace' }, { 'id': '8', 'name': 'Hanpan' }, { 'id': '9', 'name': 'Cecilia Adlehyde' }, { 'id': '10', 'name': 'Serge' }, { 'id': '11', 'name': 'Kid' }, { 'id': '12', 'name': 'Lynx' }, { 'id': '13', 'name': 'Harle' }],
 	        colorItems: '#1E90FF',
-	        categories: [{ id: 'ALUNDRA', category: 'Alundra' }, { id: 'WILD ARMS', category: 'WILD ARMS' }, { id: 'CHRONO CROSS', category: 'CHRONO CROSS' }],
 	        selectedItems: []
 	      }
 	    };
