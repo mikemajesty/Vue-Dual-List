@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "877490601745f60da28a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1787e33cc3128c68ed4d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -629,7 +629,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/home/mike/Projects/cachorro-dual-list/vue-dual-list.vue"
+	Component.options.__file = "/home/mike/Projects/cachorro-dual-list/component/vue-dual-list.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] vue-dual-list.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -640,9 +640,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-3f59ae28", Component.options)
+	    hotAPI.createRecord("data-v-612ca55a", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-3f59ae28", Component.options)
+	    hotAPI.reload("data-v-612ca55a", Component.options)
 	  }
 	})()}
 
@@ -660,7 +660,7 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(5)("1db9a489", content, false);
+	var update = __webpack_require__(5)("cc89f658", content, false);
 	// Hot Module Replacement
 	if(true) {
 	 // When the styles change, update the <style> tags
@@ -10627,7 +10627,7 @@
 	if (true) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     __webpack_require__(12).rerender("data-v-3f59ae28", module.exports)
+	     __webpack_require__(12).rerender("data-v-612ca55a", module.exports)
 	  }
 	}
 
