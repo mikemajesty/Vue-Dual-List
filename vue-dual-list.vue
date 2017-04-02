@@ -118,10 +118,14 @@
           this.options.selectedItems.push(this.options.items[index]);
           this.options.items.splice(index, 1);
         } else {
+          this.search = '';
           for (var cont = 0; cont < this.options.items.length; cont++) {
             this.options.selectedItems.push(this.options.items[cont]);
           }
-          this.options.items = [];
+
+          while (this.options.items.length > 0) {
+            this.options.items.pop();
+          }
         }
       },
       transferToLeft: function(index) {
@@ -129,10 +133,14 @@
           this.options.items.push(this.options.selectedItems[index]);
           this.options.selectedItems.splice(index, 1);
         } else {
+          this.search = '';
           for (var cont = 0; cont < this.options.selectedItems.length; cont++) {
             this.options.items.push(this.options.selectedItems[cont]);
           }
-          this.options.selectedItems = [];
+
+          while (this.options.selectedItems.length > 0) {
+            this.options.selectedItems.pop();
+          }
         }
       }
     },
