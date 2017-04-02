@@ -10,7 +10,7 @@ new Vue({
     return {
       options: {
         label: 'Demo title',
-        inputOptions: { uppercase: true, isRequired: true },
+        inputOptions: { uppercase: true, isRequired: false },
         buttonOption: { textLeft: 'Move All', textRight: 'Move All' },
         resizeBox: "md",
         items: [

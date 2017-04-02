@@ -4,12 +4,12 @@
 
 			<md-input-container v-if='options.inputOptions.isRequired' style='margin-bottom: 0px'>
 				<label for="filter">{{options.label}}</label>
-        <md-input v-model="search" required></md-input>
+        <md-input v-model="search" required v-bind:style="{'text-transform': options.inputOptions.uppercase ? 'uppercase' : ''}"></md-input>
 			</md-input-container>
 
 			<md-input-container v-if='!options.inputOptions.isRequired' style='margin-bottom: 0px'>
 				<label for="filter">{{options.label}}</label>
-        <md-input v-model="search"></md-input>
+        <md-input v-model="search" v-bind:style="{'text-transform': options.inputOptions.uppercase ? 'uppercase' : ''}"></md-input>
 			</md-input-container>
 
 			<md-layout md-flex='50' md-align="center">
@@ -99,7 +99,7 @@
       return {
         search: '',
         item: {}
-      };
+      }
     },
     methods: {
       transferToRight: function(index) {
