@@ -26,7 +26,7 @@
     "express": "4.15.2",
     "serve-favicon": "2.3.2",
     "vue": "2.2.6",
-    "vue-dual-list": "0.0.5",
+    "vue-dual-list": "0.0.7",
     "vue-loader": "^11.3.4",
     "vue-material": "^0.7.1"
   },
