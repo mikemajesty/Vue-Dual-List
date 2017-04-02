@@ -1,8 +1,8 @@
 {
   "name": "vue-dual-list",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
-  "main": "/component/vue-dual-list.vue",
+  "main": "component/vue-dual-list.vue",
   "scripts": {
     "dev": "webpack --config ./webpack/webpack.config.js --inline --hot"
   },
@@ -25,6 +25,7 @@
     "express": "4.15.2",
     "serve-favicon": "2.3.2",
     "vue": "2.2.6",
+    "vue-dual-list": "0.0.5",
     "vue-loader": "^11.3.4",
     "vue-material": "^0.7.1"
   },
