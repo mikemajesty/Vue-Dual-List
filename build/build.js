@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1787e33cc3128c68ed4d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5f2ce734cdb67485aaa8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -586,9 +586,6 @@
 	'use strict';
 
 	var VueDualList = __webpack_require__(1);
-	var VueMaterial = __webpack_require__(10);
-
-	Vue.use(VueMaterial);
 
 	new Vue({
 	  el: '#vueduallist',

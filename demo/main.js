@@ -1,7 +1,4 @@
 var VueDualList = require('../component/vue-dual-list.vue');
-var VueMaterial = require('vue-material');
-
-Vue.use(VueMaterial);
 
 new Vue({
   el: '#vueduallist',

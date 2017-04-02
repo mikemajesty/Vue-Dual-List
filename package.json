@@ -1,8 +1,8 @@
 {
   "name": "vue-dual-list",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "",
-  "main": "server.js",
+  "main": "/component/vue-dual-list.vue",
   "scripts": {
     "dev": "webpack --config ./webpack/webpack.config.js --inline --hot"
   },
