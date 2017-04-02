@@ -64,7 +64,7 @@ new Vue({
 * **options.inputOptions: {isRequired}**(required): Indicates if the letters in input text it will be required.;
 * **options.buttonOption: {textLeft}**(optional): Left button text.;
 * **options.buttonOption: {textRight}**(optional): Right button text.;
-* **options.resizeBox:**(optional): Height of the items box.;
+* **options.resizeBox:**(optional): Height of the items box. [{'xs': 150px},{'md': 225px},{'lg': 350px},{'xl': 500px}];
 * **options.items:**(required): Items that will be on the list.;
 * **options.colorItems:**(optional): Color of the items that will be on the list.;
 * **options.selectedItems:**(optional): Items selected by the user.;
