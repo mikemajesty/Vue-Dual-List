@@ -57,4 +57,16 @@ new Vue({
 ```Html
   <vue-dual-list id="vueduallist" :options="options"></vue-dual-list>
 ```
+#### Used versions
+
+##### vue 
+ version: `2.2.6`,
+##### vue-material
+version": `^0.7.1` 
+<hr>
+
+### License
+
+It is available under the MIT license.
+[License](https://opensource.org/licenses/mit-license.php)
 
