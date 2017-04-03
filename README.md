@@ -74,7 +74,7 @@ new Vue({
 ##### vue 
 version: `2.2.6`
 ##### vue-material
-version": `^0.7.1` 
+version: `^0.7.1` 
 <hr>
 
 ### License
