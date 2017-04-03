@@ -1,4 +1,4 @@
-# Vue Dual List - A Dual List using Vuejs and VueMaterial
+# Vue Dual List - Dual List using Vuejs and VueMaterial
 [![vue-dual-list.gif](https://s27.postimg.org/thne66zyb/vue-dual-list.gif)](https://postimg.org/image/4bmfzcynz/)
 
 ## Try it yourself.
@@ -72,7 +72,7 @@ new Vue({
 #### Used versions
 
 ##### vue 
- version: `2.2.6`,
+version: `2.2.6`,
 ##### vue-material
 version": `^0.7.1` 
 <hr>
