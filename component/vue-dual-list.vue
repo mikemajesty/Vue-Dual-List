@@ -50,7 +50,6 @@
 	</md-layout>
 </template>
 
-
 <style lang="css">
   .vue-dual-list .list {
     border: 1px solid #999;
