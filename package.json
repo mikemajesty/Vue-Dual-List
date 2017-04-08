@@ -4,7 +4,7 @@
   "description": "",
   "main": "component/vue-dual-list.vue",
   "scripts": {
-    "dev": "webpack --config ./webpack/webpack.config.js --inline --hot"
+    "compile": "webpack --config ./webpack/webpack.config.js --inline --hot"
   },
   "repository": {
     "type": "git",
