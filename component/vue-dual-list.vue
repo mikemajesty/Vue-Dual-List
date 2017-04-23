@@ -102,36 +102,30 @@
     },
     methods: {
       transferToRight: function(index) {
+        this.search = '';
         if (index >= 0) {
-          this.search = '';
           this.options.selectedItems.push(this.options.items[index]);
           this.options.items.splice(index, 1);
         } else {
-          this.search = '';
           for (var cont = 0; cont < this.options.items.length; cont++) {
             this.options.selectedItems.push(this.options.items[cont]);
           }
 
-          while (this.options.items.length > 0) {
-            this.options.items.pop();
-          }
+          this.options.items.splice(0, this.options.items.length);
         }
       },
       transferToLeft: function(index) {
+        this.search = '';
         if (index >= 0) {
-          this.search = '';
           this.options.items.push(this.options.selectedItems[index]);
           this.options.selectedItems.splice(index, 1);
 
         } else {
-          this.search = '';
           for (var cont = 0; cont < this.options.selectedItems.length; cont++) {
             this.options.items.push(this.options.selectedItems[cont]);
           }
 
-          while (this.options.selectedItems.length > 0) {
-            this.options.selectedItems.pop();
-          }
+          this.options.selectedItems.splice(0, this.options.selectedItems.length);
         }
       }
     },
