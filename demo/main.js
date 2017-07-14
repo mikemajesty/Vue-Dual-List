@@ -1,4 +1,4 @@
-var VueDualList = require('vue-dual-list');
+var VueDualList = require('component/vue-dual-list');
 
 new Vue({
   el: '#vueduallist',

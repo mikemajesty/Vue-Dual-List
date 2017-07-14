@@ -69,6 +69,9 @@ new Vue({
 * **options.colorItems:**(optional): Color of the items that will be on the list.;
 * **options.selectedItems:**(optional): Items selected by the user.;
 
+#### change dual list
+To execute your changes run the command ```npm run compile```
+
 #### Used versions
 
 ##### vue 
@@ -81,4 +84,3 @@ version: `^0.7.1`
 
 It is available under the MIT license.
 [License](https://opensource.org/licenses/mit-license.php)
-

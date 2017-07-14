@@ -1,6 +1,7 @@
+var path = require('path');
 module.exports = {
 
-  entry: __dirname + '/../demo/main.js',
+  entry: path.resolve( __dirname, '../demo/main.js'),
 
   output: {
     path: __dirname + '/../build',
@@ -9,7 +10,10 @@ module.exports = {
     chunkFilename: '[name].js'
   },
   resolve: {
-    alias: { vue: 'vue/dist/vue.js' }
+    alias:{
+      component: path.resolve( __dirname, '../component')
+    },
+    extensions: ['', '.ts', '.tsx', '.js', '.vue'],
   },
   module: {
     loaders: [{
