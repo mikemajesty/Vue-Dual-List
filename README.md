@@ -10,6 +10,7 @@
 ```
 
 # How to use
+
 ```JavaScript
 var VueDualList = require('vue-dual-list');
 
