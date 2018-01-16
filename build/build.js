@@ -626,7 +626,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/home/mike/Projects/vue-dual-list/component/vue-dual-list.vue"
+	Component.options.__file = "component/vue-dual-list.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] vue-dual-list.vue: functional components are not supported with templates, they should use render functions.")}
 
