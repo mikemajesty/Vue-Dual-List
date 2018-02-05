@@ -1,15 +1,18 @@
-var VueDualList = require('component/vue-dual-list');
+import Vue from 'vue'
+import VueDualList from 'component/VueDualList'
+
+Vue.config.productionTip = false
 
 new Vue({
   el: '#vueduallist',
   name: 'vue-dual-list',
-  data: function() {
+  data: function () {
     return {
       options: {
         label: 'Demo title',
         inputOptions: { uppercase: true, isRequired: false },
         buttonOption: { textLeft: 'Move All', textRight: 'Move All' },
-        resizeBox: "md",
+        resizeBox: 'md',
         items: [
           { 'id': '1', 'name': 'Alundra' },
           { 'id': '2', 'name': 'Jess' },
@@ -25,15 +28,15 @@ new Vue({
           { 'id': '10', 'name': 'Serge' },
           { 'id': '11', 'name': 'Kid' },
           { 'id': '12', 'name': 'Lynx' },
-          { 'id': '13', 'name': 'Harle' },
+          { 'id': '13', 'name': 'Harle' }
 
         ],
         colorItems: '#1E90FF',
         selectedItems: []
       }
-    };
+    }
   },
   components: {
     'VueDualList': VueDualList
   }
-});
+})

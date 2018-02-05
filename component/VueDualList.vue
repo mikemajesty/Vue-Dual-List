@@ -80,10 +80,10 @@
 </style>
 
 <script>
-  import Vue from 'vue';
-  import VueMaterial from 'vue-material';
+  import Vue from 'vue'
+  import VueMaterial from 'vue-material'
 
-  Vue.use(VueMaterial);
+  Vue.use(VueMaterial)
 
   export default {
     name: 'vue-dual-list',
@@ -94,49 +94,47 @@
         required: true
       }
     },
-    data: function() {
+    data: function () {
       return {
         search: '',
         item: {}
       }
     },
     methods: {
-      transferToRight: function(index) {
-        this.search = '';
+      transferToRight: function (index) {
+        this.search = ''
         if (index >= 0) {
-          this.options.selectedItems.push(this.options.items[index]);
-          this.options.items.splice(index, 1);
+          this.options.selectedItems.push(this.options.items[index])
+          this.options.items.splice(index, 1)
         } else {
           for (var cont = 0; cont < this.options.items.length; cont++) {
-            this.options.selectedItems.push(this.options.items[cont]);
+            this.options.selectedItems.push(this.options.items[cont])
           }
 
-          this.options.items.splice(0, this.options.items.length);
+          this.options.items.splice(0, this.options.items.length)
         }
       },
-      transferToLeft: function(index) {
-        this.search = '';
+      transferToLeft: function (index) {
+        this.search = ''
         if (index >= 0) {
-          this.options.items.push(this.options.selectedItems[index]);
-          this.options.selectedItems.splice(index, 1);
-
-        } else {
-          for (var cont = 0; cont < this.options.selectedItems.length; cont++) {
-            this.options.items.push(this.options.selectedItems[cont]);
-          }
-
-          this.options.selectedItems.splice(0, this.options.selectedItems.length);
+          this.options.items.push(this.options.selectedItems[index])
+          this.options.selectedItems.splice(index, 1)
+          return
         }
+        for (var cont = 0; cont < this.options.selectedItems.length; cont++) {
+          this.options.items.push(this.options.selectedItems[cont])
+        }
+        this.options.selectedItems.splice(0, this.options.selectedItems.length)
       }
     },
     computed: {
-      filtering: function() {
+      filtering: function () {
         if (this.search) {
           return this.options.items.filter((item) => {
-            return item.name.toLowerCase().indexOf(this.search) !== -1;
-          });
+            return item.name.toLowerCase().indexOf(this.search) !== -1
+          })
         }
-        return this.options.items;
+        return this.options.items
       }
     }
   }

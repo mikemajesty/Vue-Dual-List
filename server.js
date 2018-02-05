@@ -1,17 +1,15 @@
-var express = require("express");
-var favicon = require('serve-favicon');
-var app = express();
+var express = require('express')
+var app = express()
+var favicon = require('serve-favicon')
+app.use('/', express.static(__dirname + '/'))
+app.use(favicon(__dirname + '/static/dog.ico'))
 
-app.use('/', express.static(__dirname + '/'));
+var PORT = process.env.PORT || 5000
 
-app.use(favicon(__dirname + '/public/dog.ico'));
+app.get('/', function (req, res) {
+  res.sendfile('demo/index.html')
+})
 
-var PORT = process.env.PORT || 3000;
-
-app.get('/', function(req, res) {
-  res.sendfile('demo/index.html');
-});
-
-app.listen(PORT, function() {
-  console.log('Server Running on ' + PORT);
-});
+app.listen(PORT, function () {
+  console.log('Server Running on ' + PORT)
+})
