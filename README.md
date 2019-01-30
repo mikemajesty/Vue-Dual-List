@@ -1,5 +1,5 @@
 # Vue Dual List - Dual List using Vuejs and VueMaterial
-[![vue-dual-list.gif](https://s27.postimg.org/thne66zyb/vue-dual-list.gif)](https://postimg.org/image/4bmfzcynz/)
+[![duallist.png](https://i.postimg.cc/W4Jj8tYy/duallist.png)](https://postimg.cc/DWFtyfTQ)
 
 ## Try it yourself.
 [click here](https://vue-dual-list.herokuapp.com/)
